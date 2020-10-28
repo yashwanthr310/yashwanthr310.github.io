@@ -31,21 +31,29 @@
 </head>
 <body>
     
-    <table> </table>
+
+    <table id="sudoku"> </table>
         <script>
         var In=document.createElement("input")
-        In.setAttribute("type",Number)
-        In.setAttribute("pattern","[0-9]{1}")
+        In.setAttribute("type","text")
+        In.setAttribute("pattern","[0-9]{1}")//need to update
+
   
         var Td=document.createElement("td")
         Td.appendChild(In)
 
         var Tr=document.createElement("tr")
-        for (var i=0; i<9;i++){
-            Tr.appendChild(Td)
+
+        Tr.appendChild(Td)
+        for (var i=0; i<8;i++){
+            Tr.appendChild(Td.cloneNode(true))
+            // more about clone node at https://developer.mozilla.org/en-US/docs/Web/API/Node/cloneNode
+            console.log("hjgjg")
         }
-        for (var i=0; i<9;i++){
-            document.getElementsByTagName('table').appendChild(Td)
+
+        document.getElementById("sudoku").appendChild(Tr)
+        for (var i=0; i<8;i++){
+            document.getElementById("sudoku").appendChild(Tr.cloneNode(true))
         }
 
         
