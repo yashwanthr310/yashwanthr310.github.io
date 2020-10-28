@@ -31,17 +31,19 @@
 </head>
 <body>
     
+
     <table id="sudoku"> </table>
         <script>
         var In=document.createElement("input")
         In.setAttribute("type","text")
-        In.setAttribute("pattern","")
+        In.setAttribute("pattern","[0-9]{1}")//need to update
 
   
         var Td=document.createElement("td")
         Td.appendChild(In)
 
         var Tr=document.createElement("tr")
+
         Tr.appendChild(Td)
         for (var i=0; i<8;i++){
             Tr.appendChild(Td.cloneNode(true))
